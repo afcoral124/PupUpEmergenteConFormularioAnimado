@@ -1,0 +1,210 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+
+body{
+    font-family: 'Zen Loop', cursive;
+    font-weight: bold;
+}
+
+p{
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+article{
+    padding: 60px;
+    width: 90%;
+}
+
+h1{
+    font-size: 3em;
+    font-weight:bolder;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: rgb(248, 248, 248);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+.btn-abrir-popup{
+    background-color: rgb(0, 81, 255);
+    font-family: 'Zen Loop', cursive;
+    font-size: 2em;
+    color: white;
+    border:none;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: 0.3s ease all;
+}
+
+.btn-abrir-popup:hover{
+    background-color: rgb(52, 143, 248);
+    cursor: pointer;
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.288);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay.active{
+    visibility: visible;
+}
+
+.popup{
+    background-color: #f8f8f8;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.288);
+    border-radius: 5px;
+    width: 600px;
+    padding: 20px;
+
+
+    /*Para animar:*/
+    opacity: 0;
+    transform: scale(0.7);
+    transition: 0.3s ease all;
+}
+
+
+
+.popup .cerrar-popup{
+    font-size: 1em;
+    line-height: 1em;
+    display: block;
+    text-align: right;
+    color: #BBB;
+    transition: 0.3s ease all;
+}
+
+.popup .cerrar-popup:hover{
+    color:rgb(43, 43, 43);
+}
+
+.popup h2{
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+    /*Para la animacion*/
+    opacity: 0;
+}
+
+.popup h3{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 40px;
+    /*Para la animacion*/
+    opacity: 0;
+}
+
+.popup form .contenedor-inputs{
+    opacity: 0;
+}
+.popup form .contenedor-inputs input{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 52px;
+    border-radius: 10px;
+    border: 1px solid #BBB;
+    padding-left: 5px;
+    font-family: 'Zen Loop', cursive;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.popup form .contenedor-btn{
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+}
+
+.popup form .contenedor-btn .btn-submit{
+    border: none;
+    background-color: rgb(0, 81, 255);
+    font-family: 'Zen Loop', cursive;
+    color: white;
+    padding: 5px;
+    font-size: 2em;
+    border-radius: 5px;
+    transition: 0.3s ease all;
+    
+}
+
+.popup form .contenedor-btn .btn-submit:hover{
+    background-color: rgb(52, 143, 248);
+    cursor: pointer;
+
+}
+
+/*---------------------------------------ANIMACIONES-----------------------------------------------------------------------*/
+/*Esto es como un condicional para cuando el elemento con clase popup tenga la clase active*/
+.popup.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+    /*dura 0.8s y y el efecto comienza luego de 0.5s, forwards para que se quede de ahi en adelante con las caracteristicas definidas*/
+.popup.active h2{animation: entradaTitulo 0.8s ease 0.3s forwards;}
+.popup.active h3{animation: entradaSubtitulo 0.8s ease 0.3s forwards;}
+.popup.active .contenedor-inputs{animation: entradaInputs 1s ease 0.5s forwards;}
+.popup.active .contenedor-btn{animation: entradaBoton 0.8s ease 0.7s forwards;}
+
+
+
+@keyframes entradaTitulo{
+    from{
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes entradaSubtitulo{
+    from{
+        transform: translateY(25px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes entradaInputs {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes entradaBoton {
+    from{
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

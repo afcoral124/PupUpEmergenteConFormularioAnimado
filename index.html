@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Pop up Con Formulario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <article>
+            <h1>Presiona el Botón para abrir el Pop up</h1>
+            <button class="btn-abrir-popup" id="btn-abrir-popup">Abrir Ventana Emergente</button>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reprehenderit placeat sint maiores commodi atque, sequi nostrum veniam vel quisquam culpa nulla id ex consequatur ipsa laboriosam aperiam omnis nihil? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reprehenderit placeat sint maiores commodi atque, sequi nostrum veniam vel quisquam culpa nulla id ex consequatur ipsa laboriosam aperiam omnis nihil? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reprehenderit placeat sint maiores commodi atque, sequi nostrum veniam vel quisquam culpa nulla id ex consequatur ipsa laboriosam aperiam omnis nihil?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reprehenderit placeat sint maiores commodi atque, sequi nostrum veniam vel quisquam culpa nulla id ex consequatur ipsa laboriosam aperiam omnis nihil? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reprehenderit placeat sint maiores commodi atque, sequi nostrum veniam vel quisquam culpa nulla id ex consequatur ipsa laboriosam aperiam omnis nihil? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reprehenderit placeat sint maiores commodi atque, sequi nostrum veniam vel quisquam culpa nulla id ex consequatur ipsa laboriosam aperiam omnis nihil?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reprehenderit placeat sint maiores commodi atque, sequi nostrum veniam vel quisquam culpa nulla id ex consequatur ipsa laboriosam aperiam omnis nihil? Lorem ipsum dolor sit amet consectetur adip.</p>
+        </article>
+        <div class="overlay" id="overlay"> <!-- es la parte oscurecida del fondo cuando sale la ventana -->
+            <div class="popup" id="popup">
+                <a href="#" id="cerrar-pupup" class="cerrar-popup"><i class="fa fa-times"></i></a>
+                <h2>INGRESA TUS DATOS</h2>
+                <h3>Por favor llena los campos</h3>
+                <form action="index.html">
+                    <div class="contenedor-inputs">
+                        <input type="text" placeholder="Nombre" required>
+                        <input type="text" placeholder="Apellido" required>
+                    </div>
+                    <div class="contenedor-btn">
+                        <input type="button" class="btn-submit" id="btn-submit" value="Ingresar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
